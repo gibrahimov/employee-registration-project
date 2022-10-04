@@ -1,9 +1,11 @@
 package com.cydeo.model;
 
-import jakarta.validation.constraints.*;
+
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 
@@ -27,10 +29,10 @@ public class Employee {
     @Size(max = 12, min = 2)
     private String firstName;
     private String lastName;
-    //Tyymeleaf accepts yyy-MM-dd format, but LocalDate accepts mm-dd-yyyy(so not the same)
+    //Thymeleaf accepts yyy-MM-dd format, but LocalDate accepts mm-dd-yyyy(so not the same)
 
   //@NotNull
-   //@DateTimeFormat(pattern = "yyyy-MM-dd")
+   @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
   //@NotBlank
